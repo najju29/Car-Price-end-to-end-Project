@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Tata</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+<div class="container">
+<hr>
+    <center>     <h3>{{ predict_text1 }}</h3></center>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2">Tata Price Pridiction</h4>
+</header>
+<article class="card-body">
+<form action="{{ url_for('predict2')}}" method="POST">
+
+	<div class="form-group">
+		<label>Year</label>
+		<div class="form-group">
+		  <select id="inputState" class="form-control" name="year">
+		    <option> Choose...</option>
+		      <option name="year" value="2005">2005</option>
+		      <option name="year" value="2006">2006</option>
+              <option name="year" value="2007">2007</option>
+		      <option name="year" value="2008">2008</option>
+              <option name="year" value="2009">2009</option>
+		      <option name="year" value="2010">2010</option>
+              <option name="year" value="2011">2011</option>
+		      <option name="year" value="2012">2012</option>
+              <option name="year" value="2013">2013</option>
+		      <option name="year" value="2014">2014</option>
+              <option name="year" value="2015">2015</option>
+		      <option name="year" value="2016">2016</option>
+              <option name="year" value="2017">2017</option>
+		      <option name="year" value="2018">2018</option>
+              <option name="year" value="2019">2019</option>
+		      <option name="year" value="2020">2020</option>
+
+		  </select>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<label>Kilo-Meter Driven</label>
+	    <input class="form-control" type="text" name="km_driven">
+	</div>
+
+    <div class="form-group">
+        <label>Fuel-Type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="fuel">
+		    <option> Choose...</option>
+		      <option name="fuel" value="0">Petrol</option>
+		      <option name="fuel" value="1">CNG</option>
+              <option name="fuel" value="2">Diesel</option>
+              <option name="fuel" value="3">LPG</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>seller_type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="seller_type">
+		    <option> Choose...</option>
+		      <option name="seller_type" value="0">Individual</option>
+		      <option name="seller_type" value="1">Dealer</option>
+              <option name="seller_type" value="2">Trustmark Dealer</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Transmission</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="transmission">
+		    <option> Choose...</option>
+		      <option name="transmission" value="0">Manual</option>
+		      <option name="transmission" value="1">Automatic</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Owner</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="owner">
+		    <option> Choose...</option>
+		      <option name="owner" value="0">First Owner</option>
+		      <option name="owner" value="1">Second Owner</option>
+              <option name="owner" value="2">Third Owner</option>
+		      <option name="owner" value="3">Fourth & Above Owner</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Model_Name</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="Model_Name">
+		    <option> Choose...</option>
+              <option name="Model_Name" value="453833.3333333333">Tiago 1.2 Revotron XZ</option>
+              <option name="Model_Name" value="562500.0">Tiago NRG Petrol</option>
+              <option name="Model_Name" value="500000.0000000000">Altroz XE</option>
+              <option name="Model_Name" value="426000.0000000000">Hexa XE</option>
+              <option name="Model_Name" value="1083333.0000000000">Hexa XM</option>
+		      <option name="Model_Name" value="1133333.3333333333">Hexa XT</option>
+              <option name="Model_Name" value="341666.6666666667">Tiago 1.2 Revotron XE</option>
+              <option name="Model_Name" value="478333.0000000000">Tigor 1.2 Revotron XT</option>
+              <option name="Model_Name" value="670000.0000000000">Safari Storme EX</option>
+              <option name="Model_Name" value="977499.5000000000">Safari Storme VX Varicor 400</option>
+              <option name="Model_Name" value="287307.53846153844">New Safari DICOR 2.2 EX 4x2</option>
+              <option name="Model_Name" value="287307.53846153844">New Safari DICOR 2.2 EX 4x2</option>
+              <option name="Model_Name" value="1600000.0000000000">Harrier XZ BSIV</option>
+              <option name="Model_Name" value="426000.0000000000">Harrier XE</option>
+              <option name="Model_Name" value="93571.42857142857">Nano Lx</option>
+              <option name="Model_Name" value="162916.66666666666">Indigo CR4</option>
+              <option name="Model_Name" value="138333.33333333334">Indigo LS</option>
+              <option name="Model_Name" value="161125.00000000000">Indigo TDI</option>
+              <option name="Model_Name" value="85666.66666666667">Indica GLS BS IV</option>
+              <option name="Model_Name" value="115714.28571428571">Indica Vista Aqua 1.4 TDI</option>
+              <option name="Model_Name" value="186571.42857142858">Indica Vista TDI LS</option>
+              <option name="Model_Name" value="118333.33333333333">Indica Vista Aqua TDI BSIII</option>
+              <option name="Model_Name" value="223750.0000000000">Manza Aura (ABS) Quadrajet BS IV</option>
+              <option name="Model_Name" value="327333.3333333333">Xenon XT EX 4X2</option>
+              <option name="Model_Name" value="353750.0000000000">Zest Revotron 1.2T XE</option>
+		      <option name="Model_Name" value="770000.0000000000">Nexon 1.2 Revotron XZ Plus Dual Tone</option>
+
+
+
+
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Predict Price</button>
+    </div> <!-- form-group// -->
+
+
+
+</form>
+</article>
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+</body>
+</html>

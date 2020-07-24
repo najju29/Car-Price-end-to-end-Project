@@ -1,0 +1,224 @@
+<html>
+
+<head>
+	<title>Hyundai</title>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+</head>
+<body>
+<div class="container">
+<hr>
+    <center>     <h3>{{ predict_text1 }}</h3></center>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2">Hyundai Price Pridiction</h4>
+</header>
+<article class="card-body">
+<form action="{{ url_for('predict3')}}" method="POST">
+
+	<div class="form-group">
+		<label>Year</label>
+		<div class="form-group">
+		  <select id="inputState" class="form-control" name="year">
+		    <option> Choose...</option>
+		      <option name="year" value="2008">2008</option>
+              <option name="year" value="2009">2009</option>
+		      <option name="year" value="2010">2010</option>
+              <option name="year" value="2011">2011</option>
+		      <option name="year" value="2012">2012</option>
+              <option name="year" value="2013">2013</option>
+		      <option name="year" value="2014">2014</option>
+              <option name="year" value="2015">2015</option>
+		      <option name="year" value="2016">2016</option>
+              <option name="year" value="2017">2017</option>
+		      <option name="year" value="2018">2018</option>
+              <option name="year" value="2019">2019</option>
+		      <option name="year" value="2020">2020</option>
+
+		  </select>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<label>Kilo-Meter Driven</label>
+	    <input class="form-control" type="text" name="km_driven">
+	</div>
+
+    <div class="form-group">
+        <label>Fuel-Type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="fuel">
+		    <option> Choose...</option>
+		      <option name="fuel" value="0">Petrol</option>
+		      <option name="fuel" value="1">CNG</option>
+              <option name="fuel" value="2">Diesel</option>
+              <option name="fuel" value="3">LPG</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>seller_type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="seller_type">
+		    <option> Choose...</option>
+		      <option name="seller_type" value="0">Individual</option>
+		      <option name="seller_type" value="1">Dealer</option>
+              <option name="seller_type" value="2">Trustmark Dealer</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Transmission</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="transmission">
+		    <option> Choose...</option>
+		      <option name="transmission" value="0">Manual</option>
+		      <option name="transmission" value="1">Automatic</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Owner</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="owner">
+		    <option> Choose...</option>
+		      <option name="owner" value="0">First Owner</option>
+		      <option name="owner" value="1">Second Owner</option>
+              <option name="owner" value="2">Third Owner</option>
+		      <option name="owner" value="3">Fourth & Above Owner</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Model_Name</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="Model_Name">
+		    <option> Choose...</option>
+              <option name="Model_Name" value="545000.0">Elite i20 Magna Plus BSIV</option>
+              <option name="Model_Name" value="675000.0">Elite i20 Sportz Plus Dual Tone BSIV</option>
+              <option name="Model_Name" value="640333.3333333334">Elite i20 Sportz Plus BSIV</option>
+              <option name="Model_Name" value="730000.0">Elite i20 Magna Plus Diesel</option>
+              <option name="Model_Name" value="691666.6666666666">Elite i20 Asta Option CVT BSIV</option>
+              <option name="Model_Name" value="650000.0">Elite i20 Diesel Era</option>
+              <option name="Model_Name" value="817499.5">Elite i20 Diesel Asta Option</option>
+              <option name="Model_Name" value="738000.0">Elite i20 Sportz Plus CVT BSIV</option>
+              <option name="Model_Name" value="700000.0">Elite i20 Petrol Asta Option</option>
+
+
+		      <option name="Model_Name" value="507750.0">Grand i10 1.2 Kappa Magna BSIV</option>
+              <option name="Model_Name" value="640000.0">Grand i10 Nios AMT Magna</option>
+              <option name="Model_Name" value="600000.0">Grand i10 Nios Sportz</option>
+              <option name="Model_Name" value="700000.0">Grand i10 Nios Magna CRDi</option>
+              <option name="Model_Name" value="499428.5714285714">Grand i10 1.2 Kappa Sportz BSIV</option>
+		      <option name="Model_Name" value="510416.6666666667">Grand i10 1.2 Kappa Asta</option>
+              <option name="Model_Name" value="570000.0">Grand i10 1.2 CRDi Asta</option>
+              <option name="Model_Name" value="550000.0">Grand i10 1.2 Kappa Magna AT</option>
+              <option name="Model_Name" value="575000.0">Grand i10 1.2 Kappa Sportz AT</option>
+              <option name="Model_Name" value="525000.0">Grand i10 Asta Option</option>
+              <option name="Model_Name" value="418000.0">Grand i10 CRDi Magna</option>
+              <option name="Model_Name" value="394166.5">Grand i10 1.2 CRDi Sportz </option>
+              <option name="Model_Name" value="488200.0">Grand i10 Asta</option>
+              <option name="Model_Name" value="378750.0">Grand i10 Magna></option>
+              <option name="Model_Name" value="376666.6666666667">Grand i10 Sportz</option>
+
+
+              <option name="Model_Name" value="1050000.0">Venue SX Opt Turbo BSIV</option>
+              <option name="Model_Name" value="1097500.0">Venue SX Opt Diesel</option>
+
+              <option name="Model_Name" value="500000.0">Santro Sportz BSIV</option>
+              <option name="Model_Name" value="425000.0">Santro Magna AMT BSIV</option>
+              <option name="Model_Name" value="484999.0">Santro Sportz AMT</option>
+              <option name="Model_Name" value="350000.0">Santro Era</option>
+              <option name="Model_Name" value="515000.0">Santro Asta</option>
+              <option name="Model_Name" value="184857.14285714287">Santro Xing GLS</option>
+
+
+              <option name="Model_Name" value="1177857.142857143">Verna CRDi 1.6 SX Option</option>
+              <option name="Model_Name" value="933333.3333333334">Verna CRDi 1.6 SX</option>
+              <option name="Model_Name" value="1100000.0">Verna CRDi 1.6 AT EX </option>
+              <option name="Model_Name" value="262500.0">Verna 1.6 VTVT</option>
+
+
+              <option name="Model_Name" value="586666.6666666666">Xcent 1.2 VTVT S</option>
+              <option name="Model_Name" value="511000.0">Xcent 1.2 VTVT E Plus </option>
+		      <option name="Model_Name" value="450000.0">Xcent 1.2 CRDi S</option>
+              <option name="Model_Name" value="383333.3333333333">Xcent 1.2 CRDi E</option>
+              <option name="Model_Name" value="503333.3333333333">Xcent 1.1 CRDi SX Option</option>
+
+		      <option name="Model_Name" value="1050000.0">Creta 1.4 EX Diesel</option>
+              <option name="Model_Name" value="1200000.0">Creta 1.6 SX</option>
+              <option name="Model_Name" value="925000.0">Creta 1.4 CRDi Base</option>
+		      <option name="Model_Name" value="1049750.0">Creta 1.6 CRDi SX Plus</option>
+              <option name="Model_Name" value="850000.0">Creta 1.6 E Plus</option>
+              <option name="Model_Name" value="1186666.6666666667">Creta 1.6 CRDi SX Option</option>
+              <option name="Model_Name" value="694157.8421052631">Creta 1.6 CRDi SX</option>
+
+              <option name="Model_Name" value="229999.875">EON 1.0 Era Plus</option>
+              <option name="Model_Name" value="256874.83333333334">EON Magna Plus</option>
+              <option name="Model_Name" value="245542.85714285713">EON Era Plus</option>
+              <option name="Model_Name" value="280000.0">EON Era Plus Sports Edition</option>
+              <option name="Model_Name" value="273750.0">EON Era Plus Option</option>
+
+
+		      <option name="Model_Name" value="650000.0">i20 Active S Diesel</option>
+		      <option name="Model_Name" value="511500.0">i20 1.2 Asta</option>
+              <option name="Model_Name" value="734999.5">i20 Active 1.4 SX</option>
+              <option name="Model_Name" value="532500.0">i20 Sportz 1.4 CRDi</option>
+		      <option name="Model_Name" value="740000.0">i20 1.2 Asta Dual Tone</option>
+              <option name="Model_Name" value="626875.0">i20 Active 1.2 SX</option>
+              <option name="Model_Name" value="525000.0">i20 1.2 Spotz</option>
+              <option name="Model_Name" value="784666.6666666666">i20 1.4 Asta Option</option>
+              <option name="Model_Name" value="689166.6666666666">i20 1.4 Sportz</option>
+              <option name="Model_Name" value="597500.0">i20 Active 1.2 S</option>
+              <option name="Model_Name" value="370999.8">i20 Magna 1.4 CRDi</option>
+              <option name="Model_Name" value="293333.3333333333">i20 1.2 Magna</option>
+              <option name="Model_Name" value="250000.0">i20 1.2 Era</option>
+              <option name="Model_Name" value="245000.0">i20 Magna</option>
+              <option name="Model_Name" value="271250.0">i20 Asta</option>
+
+
+              <option name="Model_Name" value="236817.68181818182">i10 Magna</option>
+              <option name="Model_Name" value="262499.5">i10 Magna 1.1L</option>
+              <option name="Model_Name" value="288999.6">i10 Sportz 1.1L</option>
+              <option name="Model_Name" value="206300.0">i10 Sportz 1.2</option>
+              <option name="Model_Name" value="257499.75">i10 Magna 1.2</option>
+
+		  </select>
+		</div>
+    </div>
+
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Predict Price</button>
+    </div>
+
+
+</form>
+</article>
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>

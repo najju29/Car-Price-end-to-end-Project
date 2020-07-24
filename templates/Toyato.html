@@ -1,0 +1,191 @@
+<html>
+
+<head>
+	<title>Toyota</title>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+</head>
+<body>
+<div class="container">
+<hr>
+        <center>  <h3>{{ predict_text1 }}</h3></center>
+
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2">Toyato Price Pridiction</h4>
+</header>
+<article class="card-body">
+<form action="{{ url_for('predict4')}}" method="POST">
+
+	<div class="form-group">
+		<label>Year</label>
+		<div class="form-group">
+		  <select id="inputState" class="form-control" name="year">
+		    <option> Choose...</option>
+              <option name="year" value="2007">2007</option>
+		      <option name="year" value="2008">2008</option>
+              <option name="year" value="2009">2009</option>
+		      <option name="year" value="2010">2010</option>
+              <option name="year" value="2011">2011</option>
+		      <option name="year" value="2012">2012</option>
+              <option name="year" value="2013">2013</option>
+		      <option name="year" value="2014">2014</option>
+              <option name="year" value="2015">2015</option>
+		      <option name="year" value="2016">2016</option>
+              <option name="year" value="2017">2017</option>
+		      <option name="year" value="2018">2018</option>
+              <option name="year" value="2019">2019</option>
+		      <option name="year" value="2020">2020</option>
+
+		  </select>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<label>Kilo-Meter Driven</label>
+	    <input class="form-control" type="text" name="km_driven">
+	</div>
+
+    <div class="form-group">
+        <label>Fuel-Type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="fuel">
+		    <option> Choose...</option>
+		      <option name="fuel" value="0">Petrol</option>
+		      <option name="fuel" value="1">CNG</option>
+              <option name="fuel" value="2">Diesel</option>
+              <option name="fuel" value="3">LPG</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>seller_type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="seller_type">
+		    <option> Choose...</option>
+		      <option name="seller_type" value="0">Individual</option>
+		      <option name="seller_type" value="1">Dealer</option>
+              <option name="seller_type" value="2">Trustmark Dealer</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Transmission</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="transmission">
+		    <option> Choose...</option>
+		      <option name="transmission" value="0">Manual</option>
+		      <option name="transmission" value="1">Automatic</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Owner</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="owner">
+		    <option> Choose...</option>
+		      <option name="owner" value="0">First Owner</option>
+		      <option name="owner" value="1">Second Owner</option>
+              <option name="owner" value="2">Third Owner</option>
+		      <option name="owner" value="3">Fourth & Above Owner</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Model_Name</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="Model_Name">
+		    <option> Choose...</option>
+
+		      <option name="Model_Name" value="1833333.3333333333">Innova Crysta 2.4 VX MT 8S BSIV</option>
+              <option name="Model_Name" value="1585000.0">Innova Crysta 2.4 VX MT BSIV</option>
+              <option name="Model_Name" value="1700000.0">Innova Crysta 2.4 GX MT 8S BSIV</option>
+              <option name="Model_Name" value="1725000.0">Innova Crysta 2.4 GX AT</option>
+              <option name="Model_Name" value="1330000.0">Innova Crysta 2.4 ZX MT</option>
+              <option name="Model_Name" value="1750000.0">Innova Crysta 2.8 ZX AT BSIV </option>
+              <option name="Model_Name" value="815375.0">Innova 2.5 G (Diesel) 8 Seater</option>
+              <option name="Model_Name" value="846999.9">Innova 2.5 G (Diesel) 7 Seater</option>
+              <option name="Model_Name" value="1300000.0">Innova Crysta 2.4 G MT BSIV</option>
+              <option name="Model_Name" value="1350000.0">Innova Crysta 2.8 GX AT BSIV</option>
+              <option name="Model_Name" value="1800000.0">Innova Crysta 2.4 VX MT</option>
+              <option name="Model_Name" value="843333.3333333334">Innova 2.5 GX (Diesel) 7 Seater</option>
+              <option name="Model_Name" value="1097142.857142857">Innova 2.5 VX (Diesel) 8 Seater</option>
+              <option name="Model_Name" value="970000.0">Innova 2.5 VX (Diesel) 7 Seater</option>
+              <option name="Model_Name" value="998333.0">Innova 2.5 Z Diesel 7 Seater BS IV</option>
+              <option name="Model_Name" value="439333.3333333333">Innova 2.5 GX 8 STR BSIV</option>
+              <option name="Model_Name" value="950000.0">Innova 2.5 G1 BSIV</option>
+
+
+		      <option name="Model_Name" value="1500000.0">Corolla Altis 1.8 GL</option>
+              <option name="Model_Name" value="1650000.0">Corolla Altis 1.8 VL CVT</option>
+              <option name="Model_Name" value="900000.0">Corolla Altis G AT</option>
+              <option name="Model_Name" value="1150000.0">Corolla Altis GL MT</option>
+              <option name="Model_Name" value="770000.0">Corolla Altis D-4D J</option>
+
+
+              <option name="Model_Name" value="2866666.6666666665">Fortuner 2.8 4WD AT BSIV</option>
+		      <option name="Model_Name" value="2538076.923076923">Fortuner 4x2 AT</option>
+		      <option name="Model_Name" value="2933333.3333333335">Fortuner 2.8 2WD AT BSIV</option>
+              <option name="Model_Name" value="2500000.0">Fortuner 2.7 2WD AT</option>
+              <option name="Model_Name" value="1200000.0">Fortuner 4x4 MT</option>
+
+		      <option name="Model_Name" value="850000.0">Yaris G</option>
+              <option name="Model_Name" value="500000.0">Etios Liva 1.2 V</option>
+              <option name="Model_Name" value="425000.0">Etios Liva 1.4 VD</option>
+              <option name="Model_Name" value="705000.0">Etios 1.4 VXD</option>
+              <option name="Model_Name" value="650000.0">Etios Liva 1.2 VX</option>
+              <option name="Model_Name" value="509999.0">Etios 1.5 V</option>
+              <option name="Model_Name" value="482857.0">Etios VD</option>
+              <option name="Model_Name" value="433571.28571428574">Etios GD</option>
+              <option name="Model_Name" value="370500.0">Etios Cross 1.2L G</option>
+              <option name="Model_Name" value="425000.0">Etios Cross 1.4L GD</option>
+              <option name="Model_Name" value="306666.6666666667">Etios GD SP</option>
+              <option name="Model_Name" value="394166.3333333333">Etios Liva GD</option>
+
+
+
+
+
+
+
+
+
+		  </select>
+		</div>
+    </div>
+
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Predict Price</button>
+    </div> <!-- form-group// -->
+
+
+</form>
+</article>
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>

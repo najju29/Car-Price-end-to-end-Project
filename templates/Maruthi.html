@@ -1,0 +1,164 @@
+<html>
+
+<head>
+	<title>Maruthi-Suzuki</title>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+
+
+</head>
+<body>
+
+<div class="container">
+<hr>
+    <center>  <h3>{{ predict_text }}</h3></center>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2">Maruthi-Suzuki Price Pridiction</h4>
+</header>
+<article class="card-body">
+<form action="{{ url_for('predict1')}}" method="POST">
+
+	<div class="form-group">
+		<label>Year</label>
+		<div class="form-group">
+		  <select id="inputState" class="form-control" name="year">
+		    <option> Choose...</option>
+		      <option name="year" value="2005">2005</option>
+		      <option name="year" value="2006">2006</option>
+              <option name="year" value="2007">2007</option>
+		      <option name="year" value="2008">2008</option>
+              <option name="year" value="2009">2009</option>
+		      <option name="year" value="2010">2010</option>
+              <option name="year" value="2011">2011</option>
+		      <option name="year" value="2012">2012</option>
+              <option name="year" value="2013">2013</option>
+		      <option name="year" value="2014">2014</option>
+              <option name="year" value="2015">2015</option>
+		      <option name="year" value="2016">2016</option>
+              <option name="year" value="2017">2017</option>
+		      <option name="year" value="2018">2018</option>
+              <option name="year" value="2019">2019</option>
+		      <option name="year" value="2020">2020</option>
+
+		  </select>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<label>Kilo-Meter Driven</label>
+	    <input class="form-control" type="text" name="km_driven">
+	</div>
+
+    <div class="form-group">
+        <label>Fuel-Type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="fuel">
+		    <option> Choose...</option>
+		      <option name="fuel" value="0">Petrol</option>
+		      <option name="fuel" value="1">CNG</option>
+              <option name="fuel" value="2">Diesel</option>
+              <option name="fuel" value="3">LPG</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>seller_type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="seller_type">
+		    <option> Choose...</option>
+		      <option name="seller_type" value="0">Individual</option>
+		      <option name="seller_type" value="1">Dealer</option>
+              <option name="seller_type" value="2">Trustmark Dealer</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Transmission</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="transmission">
+		    <option> Choose...</option>
+		      <option name="transmission" value="0">Manual</option>
+		      <option name="transmission" value="1">Automatic</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Owner</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="owner">
+		    <option> Choose...</option>
+		      <option name="owner" value="0">First Owner</option>
+		      <option name="owner" value="1">Second Owner</option>
+              <option name="owner" value="2">Third Owner</option>
+		      <option name="owner" value="3">Fourth & Above Owner</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Model_Name</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="Model_Name">
+		    <option> Choose...</option>
+		      <option name="Model_Name" value="511463.73913043475">Swift Dzire VDI</option>
+		      <option name="Model_Name" value="230799.91525423728">Alto 800 LXI</option>
+              <option name="Model_Name" value="123553.17021276595">Alto LXi</option>
+		      <option name="Model_Name" value="115171.37142857142">Alto LX</option>
+              <option name="Model_Name" value="305344.7931034483">Wagon R VXI BS IV</option>
+		      <option name="Model_Name" value="448724.1034482759">Swift VDI BSIV</option>
+              <option name="Model_Name" value="388629.6296296296">Swift VDI</option>
+		      <option name="Model_Name" value="144416.66666666666">Wagon R LXI Minor</option>
+              <option name="Model_Name" value="94347.82608695653">800 AC</option>
+		      <option name="Model_Name" value="143608.69565217392">Wagon R LXI</option>
+              <option name="Model_Name" value="230272.72727272726">Ritz VDi</option>
+		      <option name="Model_Name" value="296999.95238095237">Alto K10 VXI</option>
+              <option name="Model_Name" value="243750.0">SX4 Vxi BSIV</option>
+              <option name="Model_Name" value="142942.7857142857">Alto LXi BSIII</option>
+		      <option name="Model_Name" value="232857.07142857142">Alto 800 VXI</option>
+              <option name="Model_Name" value="605357.1428571428">Ertiga VXI</option>
+		      <option name="Model_Name" value="517357.14285714284">Swift VXI</option>
+              <option name="Model_Name" value="776071.4285714285">S-Cross Zeta DDiS 200 SH</option>
+		      <option name="Model_Name" value="543333.1666666666">Ertiga VDI</option>
+              <option name="Model_Name" value="670000.0000000000">Swift ZXI BSIV</option>
+
+		  </select>
+		</div>
+    </div>
+
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Predict Price</button>
+    </div> <!-- form-group// -->
+
+    <h3>{{ predict_text }}</h3>
+
+</form>
+</article>
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>

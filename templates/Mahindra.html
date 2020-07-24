@@ -1,0 +1,205 @@
+<html>
+
+<head>
+     <meta charset="UTF-8">
+	<title>Mahindra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+</head>
+<body>
+<div class="container">
+<hr>
+    <center>  <h3>{{ predict_text1 }}</h3></center>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2">Mahindra Price Pridiction</h4>
+</header>
+<article class="card-body">
+<form action="{{ url_for('predict5')}}" method="POST">
+
+	<div class="form-group">
+		<label>Year</label>
+		<div class="form-group">
+		  <select id="inputState" class="form-control" name="year">
+		    <option> Choose...</option>
+              <option name="year" value="2007">2007</option>
+		      <option name="year" value="2008">2008</option>
+              <option name="year" value="2009">2009</option>
+		      <option name="year" value="2010">2010</option>
+              <option name="year" value="2011">2011</option>
+		      <option name="year" value="2012">2012</option>
+              <option name="year" value="2013">2013</option>
+		      <option name="year" value="2014">2014</option>
+              <option name="year" value="2015">2015</option>
+		      <option name="year" value="2016">2016</option>
+              <option name="year" value="2017">2017</option>
+		      <option name="year" value="2018">2018</option>
+              <option name="year" value="2019">2019</option>
+		      <option name="year" value="2020">2020</option>
+
+		  </select>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<label>Kilo-Meter Driven</label>
+	    <input class="form-control" type="text" name="km_driven">
+	</div>
+
+    <div class="form-group">
+        <label>Fuel-Type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="fuel">
+		    <option> Choose...</option>
+		      <option name="fuel" value="0">Petrol</option>
+		      <option name="fuel" value="1">CNG</option>
+              <option name="fuel" value="2">Diesel</option>
+              <option name="fuel" value="3">LPG</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>seller_type</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="seller_type">
+		    <option> Choose...</option>
+		      <option name="seller_type" value="0">Individual</option>
+		      <option name="seller_type" value="1">Dealer</option>
+              <option name="seller_type" value="2">Trustmark Dealer</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Transmission</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="transmission">
+		    <option> Choose...</option>
+		      <option name="transmission" value="0">Manual</option>
+		      <option name="transmission" value="1">Automatic</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Owner</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="owner">
+		    <option> Choose...</option>
+		      <option name="owner" value="0">First Owner</option>
+		      <option name="owner" value="1">Second Owner</option>
+              <option name="owner" value="2">Third Owner</option>
+		      <option name="owner" value="3">Fourth & Above Owner</option>
+		  </select>
+		</div>
+    </div>
+
+    <div class="form-group">
+        <label>Model_Name</label>
+        <div class="form-group">
+		  <select id="inputState" class="form-control" name="Model_Name">
+		    <option> Choose...</option>
+
+		      <option name="Model_Name" value="1400000.0">XUV500 W11 Option AWD</option>
+              <option name="Model_Name" value="1360000.0">XUV500 W10 2WD</option>
+              <option name="Model_Name" value="764285.7142857143">XUV500 W6 2WD</option>
+              <option name="Model_Name" value="705136.3636363636">XUV500 W8 2WD</option>
+              <option name="Model_Name" value="865000.0">XUV500 AT W8 FWD</option>
+              <option name="Model_Name" value="699444.4444444445">XUV500 W8 4WD</option>
+
+              <option name="Model_Name" value="1200000.0">Scorpio S5 BSIV</option>
+              <option name="Model_Name" value="1396000.0">Scorpio S11 BSIV</option>
+              <option name="Model_Name" value="760000.0">Scorpio 1.99 S10</option>
+              <option name="Model_Name" value="509999.0">Scorpio 1.99 S4</option>
+		      <option name="Model_Name" value="725000.0">Scorpio S2 7 Seater</option>
+              <option name="Model_Name" value="504999.8333333333">Scorpio SLE BSIV</option>
+              <option name="Model_Name" value="497142.85714285716">Scorpio M2DI</option>
+              <option name="Model_Name" value="493200.0">Scorpio LX</option>
+              <option name="Model_Name" value="583333.3333333334">Scorpio VLX 2WD AIRBAG BSIV </option>
+              <option name="Model_Name" value="533333.3333333334">Scorpio EX</option>
+              <option name="Model_Name" value="497142.85714285716">Scorpio M2DI</option>
+
+
+
+              <option name="Model_Name" value="674076.9230769231">Bolero Power Plus SLX</option>
+              <option name="Model_Name" value="535000.0">Bolero Power Plus Plus AC BSIV PS</option>
+              <option name="Model_Name" value="765000.0">Bolero Power Plus ZLX</option>
+              <option name="Model_Name" value="324099.9">Bolero SLX</option>
+              <option name="Model_Name" value="253571.42857142858">Bolero DI</option>
+              <option name="Model_Name" value="176666.66666666666">Bolero DI DX 7 Seater</option>
+              <option name="Model_Name" value="275000.0">Bolero SLX 2WD</option>
+              <option name="Model_Name" value="325000.0">Bolero SLE</option>
+
+
+
+              <option name="Model_Name" value="433333.3333333333">KUV 100 mFALCON G80 K2</option>
+              <option name="Model_Name" value="446666.6666666667">KUV 100 mFALCON G80 K8 5str</option>
+
+              <option name="Model_Name" value="800000.0">TUV 300 mHAWK100 T8</option>
+              <option name="Model_Name" value="680000.0">TUV 300 T8</option>
+              <option name="Model_Name" value="580000.0">TUV 300 T6 Plus</option>
+
+
+              <option name="Model_Name" value="295000.0">Verito 1.5 D4 BSIV</option>
+              <option name="Model_Name" value="191666.66666666666">Verito 1.5 D2 BSIII </option>
+
+              <option name="Model_Name" value="271125.0">Quanto C6</option>
+              <option name="Model_Name" value="290000.0">Quanto C8</option>
+              <option name="Model_Name" value="303333.3333333333">Quanto C4</option>
+
+
+              <option name="Model_Name" value="550714.2857142857">Xylo D4 </option>
+              <option name="Model_Name" value="300000.0">Xylo D4 BSIV</option>
+              <option name="Model_Name" value="279999.75">Xylo E4</option>
+              <option name="Model_Name" value="335000.0">Xylo E8</option>
+              <option name="Model_Name" value="291666.6666666667">Xylo D2</option>
+              <option name="Model_Name" value="325000.0">Xylo E4 8S</option>
+
+
+              <option name="Model_Name" value="850000.0">Thar CRDe</option>
+              <option name="Model_Name" value="450000.0">Thar 4X2</option>
+              <option name="Model_Name" value="597500.0">Thar 4X4</option>
+
+
+
+              <option name="Model_Name" value="89999.0">Renault Logan 1.5 DLS</option>
+              <option name="Model_Name" value="112500.0">Renault Logan 1.4 GLX Petrol</option>
+              <option name="Model_Name" value="200000.0">Renault Logan 1.6 Petrol GLS</option>
+
+
+		  </select>
+		</div>
+    </div>
+
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Predict Price</button>
+    </div> <!-- form-group// -->
+
+
+
+</form>
+</article>
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>
